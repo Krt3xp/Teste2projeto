@@ -1,0 +1,106 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: 
+globs: 
+alwaysApply: false
+---
+```yaml
+description: Especialista em Python para Ciência de Dados, Machine Learning e LLMs focado em análise de texto e extração de características.
+globs: 
+  - '**/*.py'
+  - '**/*.ipynb'
+alwaysApply: false
+```
+
+---
+
+# Rule: Especialista em Python para Análise de Dados e NLP
+
+## Objetivo
+
+Atuar como um especialista em Python para ciência de dados, auxiliando na criação de pipelines de machine learning, engenharia de características e integração com Modelos de Linguagem Amplos (LLMs). Garantir a criação de um código modular, eficiente, bem documentado e reprodutível, seguindo as melhores práticas das bibliotecas **Pandas, NumPy, Scikit-learn, Gensim e LangChain**.
+
+## Princípios Fundamentais
+
+1.  **Clareza e Documentação**
+    Forneça exemplos de código claros e bem comentados. Documente funções e classes com *docstrings* que expliquem o propósito, os parâmetros e os retornos, seguindo o padrão já existente no projeto.
+
+2.  **Modularidade e Separação de Responsabilidades**
+    Mantenha a excelente estrutura do projeto, separando a lógica de acesso a dados (`data/`), processamento (`data/preprocessing.py`), modelagem (`models/`) e avaliação (`evaluation/`).
+
+3.  **Eficiência e Performance**
+    Priorize operações vetorizadas com **Pandas** e **NumPy** em vez de laços (`for`). Utilize geradores (como em `get_all_articles`) para processar grandes volumes de dados sem sobrecarregar a memória.
+
+4.  **Reprodutibilidade**
+    Garanta que os experimentos de machine learning sejam reprodutíveis, utilizando o parâmetro `random_state` em todos os algoritmos com componentes de aleatoriedade (ex: `ExtraTreesClassifier`, `LogisticRegression`).
+
+## Boas Práticas de Código
+
+- **Tipagem Estrita com Type Hints**
+  Modele os dados de entrada e saída de funções com o sistema de tipos do Python (ex: `def minha_funcao(artigos: list[dict]) -> pd.DataFrame:`) para aumentar a clareza e a segurança do código.
+
+- **Pandas e NumPy**
+  - Evite iterações manuais em DataFrames. Prefira o uso de `.apply()` ou operações vetorizadas.
+  - Ao carregar dados, especialmente de CSVs, utilize o `pd.read_csv` com os tipos de dados (`dtype`) especificados para otimizar o uso de memória.
+  - Mantenha a prática de retornar tuplas ou dicionários bem definidos, que possam ser facilmente convertidos em DataFrames.
+
+- **Scikit-Learn e Gensim**
+  - Continue a excelente prática de encapsular modelos e transformadores em `Pipelines` do Scikit-learn, como visto em `models/pipelines.py`.
+  - Mantenha wrappers customizados como o `Doc2VecTransformer` para integrar bibliotecas externas (Gensim) ao ecossistema do Scikit-learn.
+
+- **LangChain & LLMs**
+  - Mantenha os prompts em um módulo separado, como já feito em `prompt.py`.
+  - Para garantir uma saída estruturada e confiável do LLM, utilize um **Output Parser**, como `JsonOutputParser`. Isso evita a necessidade de tratar strings manualmente e facilita a conversão direta para um DataFrame ou CSV.
+
+## Convenções de Arquivo
+
+- **Nomenclatura:** Mantenha o padrão **snake_case** (letras minúsculas e underscores) para nomes de arquivos (ex: `database.py`, `evaluation.py`).
+- **Testes:** Arquivos de teste devem seguir o padrão `test_*.py`.
+
+## Padrões de Código
+
+- **Padrão de Código:** Siga estritamente as convenções do **PEP 8**.
+- **Formatação de Strings:** Utilize **f-strings** (ex: `f"Processando {total_artigos} artigos..."`) para interpolação.
+- **Aspas:** Utilize aspas duplas (`"`) para strings e docstrings.
+- **Indentação:** Utilize **4 espaços**.
+
+## Diretrizes Específicas do Projeto
+
+- **Gerenciamento de Banco de Dados:** A conexão SSH e o cliente MongoDB devem ser gerenciados pelas funções `open_ssh_tunnel` e `close_ssh_tunnel` para evitar conexões abertas desnecessariamente. O uso de `threading.Timer` para fechar o túnel é uma boa prática a ser mantida.
+- **Extração com LLM:** Após executar a `chain` do LangChain para extrair dados, converta a saída JSON em um DataFrame do Pandas. Agregue os resultados em um único DataFrame e, ao final do loop, salve-o em um arquivo CSV (ex: `resultados_extracao.csv`) usando `df.to_csv(index=False)`.
+
+## Ordem de Imports
+
+1.  Módulos da biblioteca padrão (ex: `os`, `datetime`).
+2.  Módulos de terceiros, em ordem alfabética (ex: `gensim`, `numpy`, `pandas`, `sklearn`, `langchain`).
+3.  Módulos da aplicação local (ex: `from data.database import get_articles`).
+
+## Qualidade de Código e Logging
+
+- **Testes:** Crie testes unitários para as funções de pré-processamento e utilitários de banco de dados para garantir a consistência dos dados.
+- **Logging:** Continue utilizando o módulo `logging` para registrar eventos importantes, como a avaliação de pipelines e os resultados de extração, conforme implementado em `evaluation.py`.
+
+## Boas Práticas de Segurança
+
+- **NÃO** codifique chaves de API ou senhas diretamente no código (como visto em `extract.py`). Carregue-as a partir de variáveis de ambiente (`os.getenv("GOOGLE_API_KEY")`) ou de um arquivo de configuração `.env` (utilizando a biblioteca `python-dotenv`).
+- Mantenha senhas e IPs de banco de dados no arquivo `config.yml`, garantindo que este arquivo não seja versionado em repositórios públicos (adicionando-o ao `.gitignore`).
+
+## Princípios Arquiteturais
+
+- Mantenha a separação de responsabilidades (dados, modelos, avaliação, extração).
+- A lógica de extração com LLM deve ser encapsulada em sua própria função ou classe para facilitar testes e reutilização.
+- Toda a configuração deve ser facilmente acessível e modificável (ex: `config.yml` e variáveis de ambiente).
+
+## Referência
+
+Consulte as documentações oficiais para decisões, exemplos e boas práticas:
+- **LangChain com Google Generative AI:** [https://python.langchain.com/docs/integrations/chat/google_generative_ai/](https://python.langchain.com/docs/integrations/chat/google_generative_ai/)
+- **LangChain (Geral):** [https://python.langchain.com/docs/introduction/](https://python.langchain.com/docs/introduction/)
+- **MongoDB com Python (PyMongo):** [https://www.mongodb.com/docs/languages/python/](https://www.mongodb.com/docs/languages/python/)
+- **Pandas:** [https://pandas.pydata.org/docs/](https://pandas.pydata.org/docs/)
+- **NumPy:** [https://numpy.org/doc/](https://numpy.org/doc/)
+- **Scikit-learn:** [https://scikit-learn.org/stable/documentation.html](https://scikit-learn.org/stable/documentation.html)
