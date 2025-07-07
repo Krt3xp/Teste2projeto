@@ -9,7 +9,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
 from data.database import get_all_articles, close_ssh_tunnel #
-from prompt import PROMPT_EXTRACAO #
+from prompt import prompt_template #
 
 def fetch_relevant_articles() -> pd.DataFrame:
     """
@@ -53,16 +53,10 @@ def extract_features(article_ids: list, sentences: list):
         model="gemini-1.5-flash",
         temperature=0.0
     )
-
     # 2. Configuração do Prompt e Parser
     output_parser = StrOutputParser()
-    prompt = PromptTemplate(
-        template=PROMPT_EXTRACAO,
-        input_variables=["text"],
-    )
-    
     # 3. Criação da Cadeia (Chain) de Extração
-    chain = prompt | llm | output_parser
+    chain = prompt_template | llm | output_parser
     
     # 4. Iteração e Extração
     print(f"Iniciando a extração de características para {len(sentences)} artigos.")
@@ -83,7 +77,7 @@ def extract_features(article_ids: list, sentences: list):
             continue
             
         try:
-            extracted_data = chain.invoke({"text": article_text})
+            extracted_data = chain.invoke({"input_noticia": article_text})
             extracted_data_list.append({
                 '_id': article_id,
                 'dados_extraidos': extracted_data,
