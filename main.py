@@ -3,7 +3,6 @@ import time
 import pandas as pd
 from tqdm import tqdm
 
-# Importe ChatOllama em vez de ChatGoogleGenerativeAI
 from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -26,6 +25,7 @@ def fetch_relevant_articles() -> pd.DataFrame:
         manual_class = article.get('manual_relevance_class')
         auto_class = article.get('automatic_relevance_class')
         
+        # verificar quando o humano não avaliou ainda. Verificar com o Guilherme.
         if manual_class == 1 or auto_class == 1:
             relevant_articles_list.append(article)
             
@@ -41,7 +41,7 @@ def fetch_relevant_articles() -> pd.DataFrame:
 def extract_features(article_ids: list, sentences: list):
     """
     Processa cada texto de notícia para extrair características estruturadas
-    utilizando um Modelo de Linguagem Amplo (LLM).
+    utilizando LLM.
     """
     print("\n--- Iniciando Fase 2: Extração de Características ---")
     if not sentences:
@@ -49,20 +49,14 @@ def extract_features(article_ids: list, sentences: list):
         return
 
     # 1. Configuração do LLM local com Ollama
-    # Substitua a configuração do Gemini pela do Ollama, especificando o modelo desejado.
-    # A biblioteca usará automaticamente a variável de ambiente OLLAMA_HOST que você configurou.
     llm = ChatOllama(
-        model="brunoconterato/Gemma-3-Gaia-PT-BR-4b-it:f16",
-        base_url="http://192.168.3.122:11434",
+        model="deepseek-r1:1.5b",
+        base_url="http://127.0.0.1:11434",
         temperature=0.0
     )
     
     # 2. Configuração do Prompt e Parser
-    # O StrOutputParser pode não ser o ideal se o seu prompt.py espera um JSON.
-    # Se o prompt estiver configurado para JSON (como no arquivo prompt.py),
-    # o parser já está definido dentro do prompt_template.
-    # Vamos usar o parser definido no prompt.py.
-    output_parser = StrOutputParser() # Mantido conforme seu código original, mas verifique prompt.py
+    output_parser = StrOutputParser()
 
     # 3. Criação da Cadeia (Chain) de Extração
     chain = prompt_template | llm | output_parser
@@ -71,7 +65,6 @@ def extract_features(article_ids: list, sentences: list):
     print(f"Iniciando a extração de características para {len(sentences)} artigos.")
     extracted_data_list = []
     
-    # Removido o controle de limite de requisição, pois o modelo é local.
     for i in tqdm(range(len(sentences)), desc="Extraindo com LLM"):
         article_text = sentences[i]
         article_id = article_ids[i]

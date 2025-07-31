@@ -2,48 +2,55 @@
 
 ## Setup
 
-(Preferencialmente em um ambiente virtual)
+Sistema de Análise e Extração de Dados sobre Criminalidade
 
-1. Geração do clone deste repositório com o comando:
-    ```shell
-    git clone https://gitlab.com/ivato/textanalysis/crimeorganizado/comlprocessing.git
-    ```
+Este projeto implementa um pipeline de Processamento de Linguagem Natural (PLN) para analisar notícias sobre criminalidade. O sistema é capaz de classificar a relevância dos artigos e extrair informações estruturadas de textos pertinentes, utilizando modelos de Machine Learning e um Modelo de Linguagem Amplo (LLM) para a extração de dados detalhados.🚀 Funcionalidades PrincipaisConexão Segura com Banco de Dados: Utiliza um túnel SSH para se conectar de forma segura a um banco de dados MongoDB, onde as notícias são armazenadas.Classificação de Relevância: Emprega pipelines de Machine Learning (scikit-learn) para classificar automaticamente se uma notícia é relevante para o tema de crime organizado.Avaliação de Modelos: Compara diferentes técnicas de vetorização, como TF-IDF e Doc2Vec, para encontrar o modelo de classificação com melhor desempenho. Os resultados são registrados para análise.Extração de Entidades com LLM: Usa um LLM (via Ollama) para extrair informações detalhadas de notícias relevantes, como:Nomes de organizações criminosasLocalização (país, estado, município)Datas dos eventosOcorrência de conflitosApreensão de drogas e armas (incluindo tipos e quantidades)Atores envolvidos e suas relações.Saída Estruturada: Salva os dados extraídos em um formato limpo e estruturado (arquivo .csv), pronto para análise e visualização.
 
-2. Acesso ao projeto:
-    ```shell
-    cd cowebscraping
-    ```
+🛠️ Tecnologias Utilizadas
+Linguagem: Python 3
+Banco de Dados: MongoDB
+Machine Learning: scikit-learn, gensim, imbalanced-learn
+LLM & PLN: langchain, ollama
+Utilitários: PyYAML, tqdm, pandas
 
-3. Criação e inicialização do ambiente virtual:
-    ```shell
-    virtualenv .venv
-    source .venv/bin/activate
-    ```
+⚙️ Configuração do AmbienteSiga os passos abaixo para configurar o ambiente de desenvolvimento.Pré-requisitosPython 3.8 ou superiorAcesso a uma instância MongoDBOllama instalado e com um modelo LLM disponível (ex: brunoconterato/Gemma-3-Gaia-PT-BR-4b-it)
 
-4. Instalação dos pacotes necessários:
-    ```shell
-    pip install -r requirements.txt
-    ```
+1. Clonar o Repositóriogit clone <URL_DO_SEU_REPOSITORIO>
+cd <NOME_DO_PROJETO>
+2. Criar e Ativar Ambiente Virtual 
+É altamente recomendado usar um ambiente virtual para isolar as dependências do projeto.# Criar o ambiente
+python -m venv .venv
 
-5. Especificação das credenciais de acesso ao banco de dados em um arquivo intitulado `config.yaml` e no seguinte formato:
-    ```yml
-    lamcad:
-        server_ip: "<value>"
-        server_port: <value>
-        ssh_username: "<value>"
-        ssh_password: "<value>"
-        local_bind_ip: "<value>"
-        local_bind_port: <value>
-        remote_bind_ip: "<value>"
-        remote_bind_port: <value>
+# Ativar no Linux/macOS
+source .venv/bin/activate
 
-    mongodb_lamcad:
-        uri: "<value>"
-        database: "<value>"
-        accepted_news_collection: "<value>"
-        unaccepted_news_collection: "<value>"
-    ```
+# Ativar no Windows
+.venv\Scripts\activate
+3. Instalar DependênciasInstale todas as bibliotecas necessárias com um único comando:pip install -r requirements.txt
+4. Configurar CredenciaisCrie um arquivo config.yml na raiz do projeto. Este arquivo não deve ser enviado para o controle de versão (já está no .gitignore). Preencha com suas credenciais:# Exemplo de config.yml
+lamcad:
+    server_ip: "SEU_IP_DE_SERVIDOR"
+    server_port: 22
+    ssh_username: "SEU_USUARIO_SSH"
+    ssh_password: "SUA_SENHA_SSH"
+    # ... outras configurações de bind ...
 
-## Execução
-
-Ao executar o script `main.py` (com python `main.py`), os pipelines de classificação serão executados sob as notícias já classificadas manualmente e os resultados serão armazenados no banco de dados MongoDB (na coleção `classification_pipelines`). Em seguida, o pipeline com o melhor score será utilizado para classificar todas as notícias no banco.
+mongodb_lamcad:
+    uri: "SUA_URI_MONGODB"
+    database: "NOME_DO_BANCO"
+    # ... outras configurações de coleção ...
+▶️ Como ExecutarPara iniciar o pipeline completo de busca, classificação e extração, execute o script main.py:python main.py
+O script irá:Conectar-se ao banco de dados.Buscar notícias relevantes.Iterar sobre cada notícia, usando o LLM para extrair as características definidas em prompt.py.Exibir uma barra de progresso durante a extração.Salvar os resultados no arquivo caracteristicas_extraidas_ollama.csv.📂 Estrutura do Projeto.
+├── data/
+│   ├── database.py         # Funções para interagir com o MongoDB via túnel SSH.
+│   └── preprocessing.py    # Scripts para preparar os dados para os modelos.
+├── evaluation/
+│   └── evaluation.py       # Lógica para avaliar e comparar os pipelines de ML.
+├── models/
+│   ├── pipelines.py        # Definição dos pipelines de classificação (TF-IDF, Doc2Vec).
+│   └── vectorizers.py      # Wrapper customizado do Doc2Vec para compatibilidade com scikit-learn.
+├── .gitignore              # Arquivos a serem ignorados pelo Git.
+├── main.py                 # Ponto de entrada principal do projeto.
+├── prompt.py               # Define a estrutura de dados (Pydantic) e o template do prompt para o LLM.
+├── requirements.txt        # Lista de todas as dependências Python.
+└── README.md               # Esta documentação.
