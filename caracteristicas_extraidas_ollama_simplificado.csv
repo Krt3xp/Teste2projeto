@@ -1,0 +1,104 @@
+﻿_id,dados_extraidos,erro
+6625282d49c450d713adb901,"```json
+{
+  ""Organização Criminosa"": ""Não especificado"",
+  ""Pais"": ""Não especificado"",
+  ""Estado"": ""MG"",
+  ""Município"": ""Contagem"",
+  ""Data"": ""17-07-2024"",
+  ""Houve Conflito"": ""Não especificado"",
+  ""Apreensão de Drogas"": ""Não especificado"",
+  ""Drogas Apreendidas"": [],
+  ""Quantidade de Drogas"": ""Não especificado"",
+  ""Apreensão de Armas"": ""Não especificado"",
+  ""Armas Apreendidas"": [],
+  ""Primeiro Ator"": ""Suspeito"",
+  ""Segundo Ator"": ""Não especificado"",
+  ""Relação Entre Atores"": ""Rivalidade""
+}
+```",
+6625283649c450d713adb90d,"```json
+{
+  ""Organização Criminosa"": ""Não especificado"",
+  ""Pais"": ""Não especificado"",
+  ""Estado"": ""Não especificado"",
+  ""Municipio"": ""Não especificado"",
+  ""Data"": ""Não especificado"",
+  ""Houve Conflito"": ""Não especificado"",
+  ""Apreensão de Drogas"": ""Não especificado"",
+  ""Drogas Apreendidas"": [],
+  ""Quantidade de Drogas"": ""Não especificado"",
+  ""Apreensão de Armas"": ""Não especificado"",
+  ""Armas Apreendidas"": [],
+  ""Primeiro Ator"": ""Erenice Guerra"",
+  ""Segundo Ator"": ""Israel Guerra"",
+  ""Relação Entre Atores"": ""Rivalidade""
+}
+```",
+6625284949c450d713adb92f,"```json
+{
+  ""Organização Criminosa"": ""Não especificado"",
+  ""Pais"": ""Brasil"",
+  ""Estado"": ""São Paulo"",
+  ""Municipio"": ""Guaianases"",
+  ""Data"": ""11-03-2024"",
+  ""Houve Conflito"": ""Não especificado"",
+  ""Apreensão de Drogas"": ""Sim"",
+  ""Drogas Apreendidas"": [
+    ""Cocaína"",
+    ""Maconha"",
+    ""Ampolas injetáveis com produtos químicos""
+  ],
+  ""Quantidade de Drogas"": ""1 quilo de cocaína, 150 ampolas injetáveis"",
+  ""Apreensão de Armas"": ""Sim"",
+  ""Armas Apreendidas"": [
+    ""Revólver calibre 38"",
+    ""Outras armas não especificadas""
+  ],
+  ""Primeiro Ator"": ""Ajudante de 28 anos"",
+  ""Segundo Ator"": ""Pedreiro de 40 anos"",
+  ""Relação Entre Atores"": ""Rivalidade""
+}
+```",
+6625285b49c450d713adb954,"```json
+{
+  ""Organização Criminosa"": ""Não especificado"",
+  ""Pais"": ""Brasil"",
+  ""Estado"": ""MS"",
+  ""Municipio"": ""Campo Grande"",
+  ""Data"": ""01-01-2024"",
+  ""Houve Conflito"": ""Sim"",
+  ""Apreensão de Drogas"": ""Não especificado"",
+  ""Drogas Apreendidas"": [],
+  ""Quantidade de Drogas"": ""Não especificado"",
+  ""Apreensão de Armas"": ""Não especificado"",
+  ""Armas Apreendidas"": [],
+  ""Primeiro Ator"": ""Milicianos"",
+  ""Segundo Ator"": ""Não especificado"",
+  ""Relação Entre Atores"": ""Rivalidade""
+}
+```",
+662528e049c450d713adb9f8,"```json
+{
+  ""Organização Criminosa"": ""Não especificado"",
+  ""Pais"": ""Não especificado"",
+  ""Estado"": ""Não especificado"",
+  ""Municipio"": ""Rio das Ostras"",
+  ""Data"": ""14-03-2024"",
+  ""Houve Conflito"": ""Não especificado"",
+  ""Apreensão de Drogas"": ""Sim"",
+  ""Drogas Apreendidas"": [
+    ""Não especificado""
+  ],
+  ""Quantidade de Drogas"": ""Não especificado"",
+  ""Apreensão de Armas"": ""Sim"",
+  ""Armas Apreendidas"": [
+    ""Pistolas"",
+    ""Revólveres"",
+    ""Escopetas""
+  ],
+  ""Primeiro Ator"": ""Não especificado"",
+  ""Segundo Ator"": ""Não especificado"",
+  ""Relação Entre Atores"": ""Rivalidade""
+}
+```",

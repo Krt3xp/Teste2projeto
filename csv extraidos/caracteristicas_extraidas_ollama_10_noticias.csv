@@ -1,0 +1,249 @@
+﻿_id,dados_extraidos,erro
+6625282d49c450d713adb901,"<think>
+Okay, so I need to analyze this news about someone who presented a false document to military personnel and figure out the details based on the provided JSON schema. Let me start by reading through the text carefully.
+
+The first paragraph mentions that a man was suspected of lying about having a false document. The second part talks about the police investigating the suspect's CNH, which is a type of identification. They found the CNH for the suspect and another one for someone else. The suspect should be present at trial to answer the questions.
+
+Now, looking at the JSON schema, I need to extract specific information from this text. Let me go through each field one by one.
+
+1. **Organização Criminosa**: The text doesn't mention any organization or name, so I'll mark it as ""Nó especificado.""
+
+2. **Pais**: There's no information about the country where the event happened, so again, ""Nó especificado.""
+
+3. **Estado**: It mentions Belo Horizonte, which is a state in Brazil. So, ""Belo Horizonte"" should be the state.
+
+4. **Municipio**: The text doesn't specify the city or block, just the bairro Santa Cruz. I'll note that as ""Nó especificado.""
+
+5. **Data**: The document says it was on the 17th of Bairro Santa Cruz in Contagem. So, the date is ""17"".
+
+6. **Houve Conflito**: The text mentions a criminal activity involving drugs, so I'll mark this as ""Sim.""
+
+7. **Apreensao Drogas**: It refers to drogas but doesn't list any specific names. Therefore, it's ""Nó especificado.""
+
+8. **Quantidade Drogas**: No numbers are provided, so ""Nó especificado.""
+
+9. **Apreensao Armas**: The text mentions a CNH for the suspect and another for someone else, but no actual arms were found. So, I'll note that there was no apreensão de armas.
+
+10. **Primeiro Ator**: Not mentioned in the text, so ""Nó especificado.""
+
+11. **Segundo Ator**: Also not mentioned, so another ""Nó especificado.""
+
+12. **Relacao Entre Atores**: The text doesn't provide any details about how the suspects interacted, so I'll leave this as ""Nó especificado.""
+
+Putting it all together, I need to structure each field correctly in JSON format. If a field isn't present or can be inferred from context, I'll fill it with ""Nó especificado."" For the date and state, since they are specific, I'll include them.
+
+I think that's all the fields required based on the text provided.
+</think>
+
+```json
+{
+  ""organizacao_criminosa"": ""Nó especificado"",
+  ""pais"": ""Nó especificado"",
+  ""estado"": ""Belo Horizonte"",
+  ""municipio"": ""Nó especificado"",
+  ""data"": ""17"",
+  ""houve_conflito"": ""Sim"",
+  ""apreensao_drogas"": ""Nó especificado"",
+  ""quantidade_drogas"": ""Nó especificado"",
+  ""apreensao_armas"": ""Nó especificado"",
+  ""primeiro_ator"": ""Nó especificado"",
+  ""segundo_ator"": ""Nó especificado"",
+  ""relacao_entre_atores"": ""Nó especificado""
+}
+```",
+6625283649c450d713adb90d,"<think>
+Okay, so I need to extract specific information from the given news article about criminal activities in Brazil. Let me start by reading through the text carefully and identifying all the relevant details.
+
+First, the main event mentioned is Erenice Guerra's demissão as secretaria-executiva of the Casa Civil. She was also the boss of Dilma Rousseff, who was the ministra. The article talks about her leaving the position after Dilma's departure from the presidencia.
+
+Looking at the structure provided, I need to extract information about the organization (the Casa Civil), its location (Brasília), state (SP), city (Brasília), date of the event (16th October 2023), any conflicts or actions involving armed forces, quantities of weapons used, and so on.
+
+I notice that the article mentions Erenice Guerra was secretaria-executiva and boss of Dilma Rousseff. She was also the boss of the Casa Civil. The text doesn't mention any criminal activities related to the Casa Civil, so I might not find specific information about criminal organizations or crimes committed there.
+
+However, since the task is to extract information about criminal activities in Brazil, and the article doesn't provide details on that, I should probably indicate that no specific information was found. But looking back at the structure, the JSON schema includes fields like ""organizacao_criminosa"", so maybe I need to include it even if there's no info.
+
+Wait, actually, the user provided a sample output where they included several fields with empty strings or lists. So perhaps for fields that weren't present in the news, we should return an empty string or a list of empty strings.
+
+But looking at the structure again, the JSON schema specifies ""organizacao_criminosa"" as one of the required fields. Since the news doesn't mention any criminal organizations or crimes related to the Casa Civil, I think it's safe to say that no specific information was found for this field.
+
+So, putting it all together, I'll create a JSON object with each required field having appropriate values, even if they are empty strings or lists as specified.
+</think>
+
+```json
+{
+  ""organizacao_criminosa"": """",
+  ""pais"": ""SP"",
+  ""estado"": ""SP"",
+  ""municipio"": ""Brasília"",
+  ""data"": ""16/10/2023"",
+  ""houve_conflito"": false,
+  ""apreensao_drogas"": """",
+  ""quantidade_drogas"": """",
+  ""apreensao_armas"": true,
+  ""primeiro_ator"": """",
+  ""segundo_ator"": """",
+  ""relacao_entre_atores"": """",
+  ""drogas_apreendidas"": [],
+  ""armas_apreendidas"": []
+}
+```",
+6625284949c450d713adb92f,"<think>
+Okay, I need to analyze the given news snippet and extract specific information into JSON format. Let me go through each part step by step.
+
+First, I'll identify the main elements in the news: a denúncia (crime), the location where it happened, the police actions, and details about the crimes involved like drogas, armas, etc.
+
+Starting with the organization criminosa, which is the police agency responsible for this crime. From the text, it seems the police are the main entity here, so I'll set that as ""Policía"".
+
+Next, the location where the crime occurred. The news mentions a house in Guaianases, so I'll note that down.
+
+The state where the crime happened is also specified: Guaianases, which is part of SP (São Paulo State). So, ""Estado"" will be ""SP"".
+
+The city within the state is São Paulo, specifically Guaianases. Therefore, ""Municipio"" should be ""Guaianases"".
+
+For the date and time, the news doesn't specify a particular hour or minute, so I'll leave it as ""N/A"".
+
+There was a conflito (conlict) involving armed forces. The text mentions that there were apreensões de armas (armies), so I'll set ""houve_conflito"" to ""Sim"".
+
+The police used drogas and armas. Drogas found include R$ 262,70, 13 placas de carros, and a revólver calibre 38. Armas found are a saco plástico com cocaína em um armário, um paperote de maconha, 133 invólucros, e um tablete com aproximadamente um quilo de cocaína. So, ""apreensao_drogas"" will list all the products found in drogas, and ""apreensao_armas"" for armas.
+
+The first actor is a 40-year-old man who was contracted by a pedreiro to work on a house. The second actor is an unknown person. The relationship between them isn't specified, so I'll set ""relacao_entre_atores"" to ""N/A"".
+
+There are multiple drogas found in the house and another room. The quantities vary: 13 placas de carros for drogas, and around 200 kg of products for armas. So, ""quantidade_drogas"" will have both counts, and ""drogas_apreendidas"" will list all the products.
+
+The first actor was a 40-year-old man. The second actor is unknown. The relationship isn't specified. So, I'll set ""primeiro_ator"" to ""40 anos"", ""segundo_ator"" to ""N/A"", and ""relacao_entre_atores"" to ""N/A"".
+
+There are multiple armas found in the house and another room. The quantities vary: 1 saco plástico, 2 armas, and around 50 kg of products. So, ""armas_apreendidas"" will list all the armas found.
+
+The first actor was a 40-year-old man. The second actor is unknown. The relationship isn't specified. So, I'll set ""primeiro_ator"" to ""40 anos"", ""segundo_ator"" to ""N/A"", and ""relacao_entre_atores"" to ""N/A"".
+
+The case was registered in the 44th district of Guaianases. The location passed through a perimeter. So, I'll note that.
+
+I think that's all the information needed for this analysis.
+</think>
+
+```json
+{
+  ""organizacao_criminosa"": ""Policía"",
+  ""pais"": ""SP"",
+  ""estado"": ""Guaianases"",
+  ""municipio"": ""Guaianases"",
+  ""data"": ""N/A"",
+  ""houve_conflito"": ""Sim"",
+  ""apreensao_drogas"": [
+    ""R$ 262,70"",
+    ""13 placas de carros"",
+    ""R$ 262,70""
+  ],
+  ""quantidade_drogas"": {
+    ""13 placas de carros"": ""13"",
+    ""R$ 262,70"": ""262.70""
+  },
+  ""apreensao_armas"": [
+    ""Saco plástico com cocaína em um armário"",
+    ""133 invólucros"",
+    ""Tablete com aproximadamente um quilo de cocaína""
+  ],
+  ""primeiro_ator"": ""40 anos"",
+  ""segundo_ator"": ""N/A"",
+  ""relacao_entre_atores"": ""N/A"",
+  ""armas_apreendidas"": [
+    ""Saco plástico com cocaína em um armário"",
+    ""13 armas""
+  ],
+  ""primeiro_ator"": ""40 anos"",
+  ""segundo_ator"": ""N/A"",
+  ""relacao_entro_atores"": ""N/A"",
+  ""caso"": ""44º DP"",
+  ""local"": ""Guaianases"",
+  ""perícia"": true,
+  ""locaciona"": false
+}
+```",
+6625285b49c450d713adb954,"<think>
+Okay, so I need to analyze this news about criminal activity in Brazil and extract specific details into JSON format. Let me start by reading through the provided text carefully.
+
+First, the text mentions Ivan Blaz from the Bope (Bolsonaro) party stating that there's a possibility of crime involving minors. He talks about two men being killed in a bar on Sunday morning. The police are investigating this case, and Bope is leading the charge. They're also mentioning another suspect, Leonardo Lopes da Silva, who was 37 years old.
+
+Looking at the structure provided, I need to extract information from each field. Let's go step by step:
+
+1. **Organização Criminosa**: The text mentions ""Existe essa possibilidade"", which translates to ""There is this possibility"". So, the name should be ""Existe essa possibilidade"".
+
+2. **Pais**: The event happened in Rio de Janeiro, specifically in the Zona Oeste do Rio. So, the code would be ""Zona Oeste do Rio"".
+
+3. **estado (State)**: The state is Brazil, so it's ""Brasil"".
+
+4. **Municipio (City)**: The location mentioned is Boquecá, which is a city in Rio de Janeiro.
+
+5. **Data**: The crime happened on Sunday morning of the second day, which would be September 2nd, 2023.
+
+6. **houve_conflito**: The text doesn't mention any conflict or confrontation, so this field should be ""N/A"".
+
+7. **apreensao_drogas**: No details about drogas are mentioned, so it's ""N/A"".
+
+8. **quantidade_drogas**: Also not provided, so ""N/A"".
+
+9. **apreensao_armas**: The text doesn't mention any armed forces involved, so ""N/A"".
+
+10. **primeiro_ator**: Ivan Blaz is mentioned as the first actor.
+
+11. **segundo_ator**: Leonardo Lopes da Silva is the second actor.
+
+12. **relacao_entre_atores**: There's no information about how these two interact or any kind of relationship, so ""N/A"".
+
+I think that covers all the fields. Now, I'll structure this into JSON as specified.
+</think>
+
+```json
+{
+  ""organizacao_criminosa"": ""Existe essa possibilidade"",
+  ""pais"": ""Zona Oeste do Rio"",
+  ""estado"": ""Brasil"",
+  ""municipio"": ""Boquecá"",
+  ""data"": ""2023-09-02"",
+  ""houve_conflito"": ""N/A"",
+  ""apreensao_drogas"": ""N/A"",
+  ""quantidade_drogas"": ""N/A"",
+  ""apreensao_armas"": ""N/A"",
+  ""primeiro_ator"": ""Ivan Blaz"",
+  ""segundo_ator"": ""Leonardo Lopes da Silva"",
+  ""relacao_entro_atores"": ""N/A""
+}
+```",
+662528e049c450d713adb9f8,"<think>
+Okay, so I need to extract specific information from the given news article about criminal activities in Brazil. Let me start by reading through the entire text carefully.
+
+First, I'll look for details about the organization involved. The main suspect is Allan Turnowski, who was sent a document. His name and position are mentioned, so that's straightforward.
+
+Next, the location where the event occurred is Rios das Ostras. That should be noted as ""Pais"" in the JSON structure.
+
+The date of the event is important too. It says it happened on the 14th day of the second day (2nd Tuesday) of February. So I'll include that as ""Data"".
+
+I also need to check if there were any conflits of arms or weapons. The document mentions armas, but it doesn't specify which ones. Since the user wants specific information and this one is not present, I should return 'N especificado'.
+
+Looking at the incidents involving police officers, Allan Turnowski was the first at 14:00, second at 15:30, and there's a relationship between them mentioned as Rivalidade. So ""Primeiro Ator"" and ""Segundo Ator"" with their respective times are needed.
+
+The document also mentions that the investigation is ongoing in Coinpol, so I'll include that as ""Data do evento"".
+
+There were denúncias in the document about irregularities inliciting the Draco. The document doesn't mention any specific incidents related to this, so it's 'N especificado'.
+
+I should make sure not to miss any other details like the number of documents or the exact location where the investigation was conducted. From what I can gather, the main points are Allan Turnowski's role, the date and location, the document sent, the relationship between officers, and the ongoing investigation.
+
+Now, putting it all together into JSON format as specified.
+</think>
+
+```json
+{
+  ""organizacao_criminosa"": ""Allan Turnowski"",
+  ""pais"": ""Rios das Ostras"",
+  ""estado"": ""Pais"",
+  ""municipio"": null,
+  ""data"": ""14 de February do dia 2"",
+  ""houve_conflito"": ""N especificado"",
+  ""apreensao_drogas"": ""N especificado"",
+  ""quantidade_drogas"": ""N especificado"",
+  ""apreensao_armas"": ""Sim"",
+  ""primeiro_ator"": ""Allan Turnowski"",
+  ""segundo_ator"": ""Cláudio Ferraz"",
+  ""relacao_entroarte"": ""Rivalidade, Competi\u00e7\u00e3o, Coopera\u00e7\u00e3o, Integra\u00e7\u00e3o, Confronto""
+}
+```",
