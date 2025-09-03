@@ -1,0 +1,116 @@
+﻿_id,Organizacao Criminosa,Pais,Estado,Municipio,Data,Houve Conflito,Apreensao de Drogas,Drogas Apreendidas,Quantidade de Drogas,Apreensao de Armas,Armas Apreendidas,Primeiro Ator,Segundo Ator,Relacao Entre Atores,erro,resposta_bruta,Organização Criminosa,País,Município,Apreensão de Drogas
+6625282d49c450d713adb901,Não especificado,Brasil,MG (Minas Gerais),Contagem,17-04-2023,Não especificado,Não especificado,[],Não especificado,Não especificado,[],Suspeito não identificado,Mulher cuja CNH foi apreendida no nome do suspeito,Confronto,,,,,,
+6625283649c450d713adb90d,,,,,,,,,,,,,,,json_decode_error,"```json
+{
+  ""Organizacao Criminosa"": ""Não especificado"",
+  ""Pais"": ""Brasil"",
+  ""Estado"": ""Não especificado"",
+01-23,
+""Municipio"": ""Não especificado"",
+  ""Houve Conflito"": ""Não especificado"",
+  ""Apreensao de Drogas"": ""Não especificado"",
+  ""Drogas Apreendidas"": [],
+  ""Quantidade de Drogas"": ""Não especificado"",
+  ""Apreensao de Armas"": ""Não especificado"",
+  ""Armas Apreendidas"": [],
+  ""Primeiro Ator"": ""Erenice Guerra"",
+  ""Segundo Ator"": ""Saulo e Israel Guerra"",
+  ""Relacao Entre Atores"": ""Conflito""
+}
+```
+",,,,
+6625284949c450d713adb92f,,,,,,,,,,,,,,,no_json_found,"```json
+{
+  ""Organizacao Criminosa"": ""Não especificado"",
+  ""País"": ""Brasil"",
+  ""Estado"": ""SP"",
+  ""Municipio"": ""Guaianases"",
+  ""Data"": ""11-03-2023"",
+  ""Houve Conflito"": ""Não especificado"",
+  ""Apreensao de Drogas"": ""Sim"",
+  ""Drogas Apreendidas"": [""Cocaína""],
+  ""Quantidade de Drogas"": ""1 quilo (maconha)"",
+  ""Apreensao de Armas"": ""Sim"",
+  ""Arm",,,,
+6625285b49c450d713adb954,,,,,,,,,,,,,,,json_decode_error,"```json
+{
+  ""Organizacao Criminosa"": ""Não especificado"",
+  ""Pais"": ""Brasil"",
+  ""Estado"": ""MS"",
+01-23,
+""Municipio"": ""Campo Grande"",
+""Data"": ""01-04-2023"",
+""Houve Conflito"": ""Sim"",
+""Apreensao de Drogas"": ""Não especificado"",
+""Drogas Apreendidas"": [],
+""Quantidade de Drogas"": ""Não especificado"",
+""Apreensao de Armas"": ""Não especificado"",
+""Armas Apreendidas"": [],
+""Primeiro Ator"": ""Ivan Blaz"",
+""Segundo Ator"": ""Leonardo Lopes da Silva"",
+""Relacao Entre Atores"": ""Conflito""
+}
+```",,,,
+662528e049c450d713adb9f8,Não especificado,Rio das Ostras,Não especificado,Não especificado,14-02-YYYY,Não especificado,Não especificado,[],Não especificada,Sim,"['pistolas', 'revólveres', 'escopetas']",Cláudio Ferraz,Allan Turnowski,Não especificado,,,,,,
+662528e349c450d713adb9fb,,,MA (Maranhão),,DD-MM-AAAA não fornecida no texto. Supondo que a reportagem tenha sido publicada recentemente em relação ao contexto da notícia.,Não especificado,,[],Não especificada,Não especificado,[],"Cristiano, mencionado no texto.",Não especificado,Conflito,,,Não especificado,Brasil,"São Luís, capital do estado","Sim, pois menciona 'tráfico de drogas'."
+662528f749c450d713adba15,,,,,,,,,,,,,,,json_decode_error,"```json
+{
+  ""Organizacao Criminosa"": ""Não especificado"",
+  ""Pais"": ""Rios das Ostras"",
+  ""Estado"": ""Não especificado"",
+01-23,
+""Municipio"": ""Centro da cidade"",
+""Data"": ""15-03-2023"",
+""Houve Conflito"": ""Não especificado"",
+""Apreensao de Drogas"": ""Sim"",
+""Drogas Apreendidas"": [],
+""Quantidade de Drogas"": ""Não especificado"",
+""Apreensao de Armas"": ""Sim"",
+""Armas Apreendidas"": [""6 armas sem registro""],
+""Primeiro Ator"": ""Cláudio Ferraz"",
+""Segundo Ator"": ""Allan Turnowski"",
+""Relacao Entre Atores"": ""Não especificado""
+}
+```",,,,
+6625290449c450d713adba32,,,,,,,,,,,,,,,no_json_found,"{
+  ""Organizacao Criminosa"": ""Não especificado"",
+  ""Pais"": ""Brasil"",
+  ""Estado"": ""SP"",
+  ""Municipio"": ""Carapicuíba"",
+  ""Data"": ""10-05-YYYY"",
+  ""Houve Conflito"": ""Não especificado"",
+  ""Apreensao de Drogas"": ""Sim"",
+  ""Drogas Apreendidas"": [""maconha""],
+  ""Quantidade de Drogas"": ""307 tijolos (unidade não fornecida)"",
+  ""Apreensao de Armas"": ""Não especificado"",
+0",,,,
+6625290c49c450d713adba44,,,,,,,,,,,,,,,json_decode_error,"{
+  ""Organizacao Criminosa"": ""Não especificado"",
+  ""Pais"": ""Brasil"",
+  ""Estado"": ""RS"",
+  ""Municipio"": [""Jaguarón"", ""Pelotas""],
+  ""Data"": ""08-03"",
+  ""Houve Conflito"": ""Não especificado"",
+  ""Apreensao de Drogas"": ""Sim"",
+  ""Drogas Apreendidas"": [],
+  ""Quantidade de Drogas"": ""Não especificado"",
+0,
+""Apreensao de Armas"": ""Não especificado"",
+""Armas Apreendidas"": [],
+  ""Primeiro Ator"": ""Não especificado"",
+  ""Segundo Ator"": ""Não especificado"",
+  ""Relacao Entre Atores"": ""Rivalidade""
+}",,,,
+6625290f49c450d713adba4c,,,,,,,,,,,,,,,no_json_found,"```json
+{
+  ""Organização Criminosa"": ""Não especificado"",
+  ""Pais"": ""Brasil"",
+  ""Estado"": ""RJ"",
+  ""Municipio"": ""Rio de Janeiro"",
+  ""Data"": ""06-04-2023"",
+  ""Houve Conflito"": ""Não especificado"",
+  ""Apreensao de Drogas"": ""Sim"",
+  ""Drogas Apreendidas"": [],
+  ""Quantidade de Drogas"": ""Não especificado"",
+  ""Apreensao de Armas"": ""Não especificado"",
+  ""Arm",,,,

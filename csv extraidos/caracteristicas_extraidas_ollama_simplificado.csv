@@ -1,193 +1,104 @@
 ﻿_id,dados_extraidos,erro
-6625282d49c450d713adb901,"<think>
-Primeiro, identifico que o texto não apresenta informações sobre a organização criminosa. Portanto, o JSON deve incluir 'Não especificado' para a organização.
-
-Em seguida, verifico se há dados sobre o país. O texto não menciona um país específico, então o país será 'Não especificado'.
-
-Para o estado, não encontrei informações suficientes, portanto, o estado também será 'Não especificado'.
-
-No Municipípio, o texto não mentiona um município específico, o que significa que o município será 'Não especificado'.
-
-A data de lançamento da noticia é indicada como 17, mas não há explicitlyo de data. Como não há explicitação, a data será setade-NaN.
-
-Analisando os conflitos, o texto mentiona que o homem apresentou um documento falso aos militares, o que sugere um conflito. Portanto, 'Sim' para Apreensao de Conflito.
-
-Para a apreensão de drogas, o texto menciona que o suspeito apresentou uma CNH falsa e foi confirmado a mandado de prisão. Isso indica que o homem feiu apreensão de drogas. Portanto, 'Sim' para Apreensao de Drogas.
-
-A quantidade e unidade de medida não é indicada, portanto, 'Não especificado'.
-
-Para a apreensão de armas, o texto não mentiona nenhuma arma específica, o que significa que a lista será vazia.
-
-No primeiro ator, o texto menciona que o homem foi reconhecido e abordou o suspeito. Portanto, o primeiro ator é 'Sim'.
-
-No segundo Ator, também é mencionado que o homem foi reconhecido e abordou o suspeito. Portanto, o segundo Ator também é 'Sim'.
-
-Relacionando os atores, o conflito é entre um único ator, o homem, portanto, a relação é 'Rivalidade'.
-
-Finalmente, organizamos todos esses pontos em um JSON como feito na estruturação fornecida.
-</think>
-
-```json
+6625282d49c450d713adb901,"```json
 {
-    ""Organização Criminosa"": ""Não especificado"",
-    ""Pais"": ""Não especificado"",
-    ""estado"": ""Não especificado"",
-    ""Município"": ""Não especificado"",
-    ""Data"": ""2023-10-17"",
-    ""Apreensão de Conflito"": ""Sim"",
-    ""Apreensão de Drogas"": ""Sim"",
-    ""Drogas Apreendidas"": [""drogas""],
-    ""Quantidade de Drogas"": ""Não especificado"",
-    ""Apreensão de Armas"": ""Não especificado"",
-    ""Armas Apreendidas"": [],
-    ""Primeiro Ator"": ""Sim"",
-    ""Segundo Ator"": ""Sim"",
-    ""Relação entre Atores"": ""Rivalidade""
+  ""Organização Criminosa"": ""Não especificado"",
+  ""Pais"": ""Não especificado"",
+  ""Estado"": ""MG"",
+  ""Município"": ""Contagem"",
+  ""Data"": ""17-07-2024"",
+  ""Houve Conflito"": ""Não especificado"",
+  ""Apreensão de Drogas"": ""Não especificado"",
+  ""Drogas Apreendidas"": [],
+  ""Quantidade de Drogas"": ""Não especificado"",
+  ""Apreensão de Armas"": ""Não especificado"",
+  ""Armas Apreendidas"": [],
+  ""Primeiro Ator"": ""Suspeito"",
+  ""Segundo Ator"": ""Não especificado"",
+  ""Relação Entre Atores"": ""Rivalidade""
 }
 ```",
-6625283649c450d713adb90d,"<think>
-Primeiro, identifico as informações necessárias para each one of the requested fields.
-
-Para o Criminosa, verifico se há informações sobre a organização que envolvia ou link a noticia. Nenhum explicitly é indicado, então use 'Não especificado'.
-
-Pais: verifico se há informações sobre o país onde o evento ocorre. A noticia não specifya o país, então use 'Não especificado'.
-
-State: verifico se há informações sobre o estado onde o evento ocorre. Não há informações específicas, então use 'Não especificado'.
-
-Município: verifico se há informações sobre o município. Não há informações específicas, então use 'Não especificado'.
-
-Data: verifico se há informações sobre a data do evento. A noticia specifya que o inquérito foi feito em 14 de setembro do ano passado, e a autorização para prorrogar o inquérito foi concedida da Justiça Federal no sexta do recesso (7). Portanto, a data é 07/16.
-
-Hve Conflito: verifico se há informações sobre o conflito. A noticia specifya que o inquérito foi instalado em  . Os agentes federais continuam somente o trabalho de perícia sobre documentos e espelhos de computadores, mas não explicitamente mencionam um conflito específico. Portanto, use 'Não especificado'.
-
-Apreensao de Drogas: verifico se há informações sobre a apreensão de drogas. Não há informações específicas, então use uma lista vazia.
-
-Drogas Apreendidas: não há informações específicas, então use uma lista vazia.
-
-Quantidade de Drogas: não há informações específicas, então use 'Não especificado'.
-
-Apreensao de Armas: verifico se há informações sobre a apreensão de armas. Não há informações específicas, então use 'Não especificado'.
-
-Armas Apreendidas: não há informações específicas, então use uma lista vazia.
-
-Primeiro Ator: verifico se há informações sobre o primeiro ator principal envolvido. O inquérito foi instalado em 14 de setembro do ano passado, e os agentes federais já interrogaram cerca de 30 envolvidos nas denúncias de tráfico de influência. Portanto, use 'Não especificado'.
-
-Segundo Ator: verifico se há informações sobre o segundo ator principal envolvido. Não há informações específicas, então use 'Não especificado'.
-
-Relação entre Atores: verifico se há informações sobre a relation between the actors. O texto não explicitamente menciona uma relação específica entre os atores, então use 'Não especificado'.
-</think>
-
+6625283649c450d713adb90d,"```json
 {
-    ""Criminosa"": ""Não especificado"",
-    ""Pais"": ""Não especificado"",
-    ""State"": ""Não especificado"",
-    ""Município"": ""Não especificado"",
-    ""Data"": ""07/16"",
-    ""Hve Conflito"": ""Não especificado"",
-    ""Apreensao de Drogas"": [],
-    ""Drogas Apreendidas"": [],
-    ""Quantidade de Drogas"": ""Não especificado"",
-    ""Apreensao de Armas"": ""Não especificado"",
-    ""Armas Apreendidas"": [],
-    ""Primeiro Ator"": ""Não especificado"",
-    ""Segundo Ator"": ""Não especificado"",
-    ""Relação entre Atores"": ""Não especificado""
-}",
-6625284949c450d713adb92f,"<think>
-Primeiro identifico os dados reais da noticia. A denúncia levou à polícia até o laboratório de drogas, que está na Rua Pedro da Silveira, Guaianapes, no Zona Leste de São Paulo.
-
-Agora, verifico se há um ator principal envolvido. O ajudante do 28 anos é o único que foi apreendido e confere a história dopedo. Portanto, o primeiro ator é o ajudante.
-
-No texto não explicitamente está mencionado o segundo ator principal, mas assumeu ser o policial ou another figure que assistia no momento da denúcia. Assim, o segundo Ator será o policial.
-
-Relacionando os atores, ambos foram rivalistas e cooperavam na detecção das drogas, indicando uma cooperação entre os dois.
-
-Verifico os dados de densidade e volume dosdrogas encolados, mas não há informações suficientes para estabelecer a quantidade. Portanto, a quantidade de drogas não está especificada.
-
-Os armas encontrados são listos, incluindo 13 placas de carros, um revólver calibre 38, e outros produtos químicos, fermento, pó branco e pasta marrom. Assim, a lista de armas é correta.
-
-O locativo da polícia foi registrado no 44º DP em Guaianapes, e o local passou por perícia, indicando um changemento geográfico.
-
-Resumindo, os dados extraídos são:
-- Criminosa: Localização da denúncia
-- Pais: São Paulo
-- Estado: Guaianapes
-- Municipio: Guaianapes (assumido)
-- Data: 11 de Terça-feira, 2024
-- Primeiro Ator: Augele do 28 anos
-- Segundo Ator: Policial ou another figure
-- Relação entre Atores: Rivalidade e Cooperação
-- Quantidade de Drogas: Não está especificado
-- Apreensao de Armas: Os armas encontrados
-</think>
-
-```json
+  ""Organização Criminosa"": ""Não especificado"",
+  ""Pais"": ""Não especificado"",
+  ""Estado"": ""Não especificado"",
+  ""Municipio"": ""Não especificado"",
+  ""Data"": ""Não especificado"",
+  ""Houve Conflito"": ""Não especificado"",
+  ""Apreensão de Drogas"": ""Não especificado"",
+  ""Drogas Apreendidas"": [],
+  ""Quantidade de Drogas"": ""Não especificado"",
+  ""Apreensão de Armas"": ""Não especificado"",
+  ""Armas Apreendidas"": [],
+  ""Primeiro Ator"": ""Erenice Guerra"",
+  ""Segundo Ator"": ""Israel Guerra"",
+  ""Relação Entre Atores"": ""Rivalidade""
+}
+```",
+6625284949c450d713adb92f,"```json
 {
-  ""Criminosa"": ""Localização da denúcia"",
-  ""Pais"": ""São Paulo"",
-  "" Estado"": ""Guaianapes"",
-  ""Município"": ""Guaianapes"",
-  ""Data"": ""11 Terça-feira, 2024"",
-  ""Primeiro Ator"": ""Augele do 28 anos"",
-  ""Segundo Ator"": ""Policial ou another figure"",
-  ""Relação entre Atores"": ""Rivalidade e Cooperação"",
-  ""Quantidade de Drogas"": ""Não está especificado"",
-  ""Apreensao de Armas"": [
-    ""13 placas de carros"",
-    ""Revólver calibre 38"",
-    ""Productos químicos, fermento, pó branco e pasta marrom""
+  ""Organização Criminosa"": ""Não especificado"",
+  ""Pais"": ""Brasil"",
+  ""Estado"": ""São Paulo"",
+  ""Municipio"": ""Guaianases"",
+  ""Data"": ""11-03-2024"",
+  ""Houve Conflito"": ""Não especificado"",
+  ""Apreensão de Drogas"": ""Sim"",
+  ""Drogas Apreendidas"": [
+    ""Cocaína"",
+    ""Maconha"",
+    ""Ampolas injetáveis com produtos químicos""
   ],
-  ""Locativo da Polícia"": ""44º DP, Guaianapes""
+  ""Quantidade de Drogas"": ""1 quilo de cocaína, 150 ampolas injetáveis"",
+  ""Apreensão de Armas"": ""Sim"",
+  ""Armas Apreendidas"": [
+    ""Revólver calibre 38"",
+    ""Outras armas não especificadas""
+  ],
+  ""Primeiro Ator"": ""Ajudante de 28 anos"",
+  ""Segundo Ator"": ""Pedreiro de 40 anos"",
+  ""Relação Entre Atores"": ""Rivalidade""
 }
 ```",
-6625285b49c450d713adb954,"<think>
-Primeiro, identifico as informações relevantes da noticia. Em seguida, organizo cada informações em suas respectivas seções de JSON, usando os padrões dadas. Se não há informações, substituo com o valor padrão correspondente.
-
-Para a organização criminosa, verifico se existe um nome específico e use 'Não especificado' se não houver. Para o estado, verifico se há uma súa e use a mesma seção. O município e o município são identificados de forma clara.
-
-A data é apresentada como DD-MM-AAAA, então uso essa formato. Por favor, use 'Não especificado' se não encontre nenhuma informações.
-
-Para os crimes, verifico se há drogas ou armas envolvidas e apresento a lista correspondente. Se não houver, use uma lista vazia.
-
-Relações entre atores são identificados de forma clara, usando 'Sim' ou 'Não'. Por favor, use o valor padrão se não for claro.
-
-Finalmente, organizo todo o conteúdo em uma estrutura JSON com as seções especificadas, garantindo que todas as informações estejam incluídas corretamente.
-</think>
-
-```json
+6625285b49c450d713adb954,"```json
 {
-  ""organização_criminosa"": ""Não especificado"",
-  ""pais"": ""Não especificado"",
-  ""estado"": ""Não especificado"",
-  ""município"": ""Não especificado"",
-  ""data"": ""11-02-2024"",
-  ""houve_conflito"": ""Sim"",
-  ""apreensão_de_drogas"": [""Câmbio de drogas: 1.000mls""],
-  ""drogas_apreendidas"": [""Câmbio de drogas: 1.000mls""],
-  ""quantidade_de_drogas"": ""Não especificado"",
-  ""apreensão_de_armas"": ""Sim"",
-  ""armas_apreendidas"": [""Arma da vítima: 2x""]
+  ""Organização Criminosa"": ""Não especificado"",
+  ""Pais"": ""Brasil"",
+  ""Estado"": ""MS"",
+  ""Municipio"": ""Campo Grande"",
+  ""Data"": ""01-01-2024"",
+  ""Houve Conflito"": ""Sim"",
+  ""Apreensão de Drogas"": ""Não especificado"",
+  ""Drogas Apreendidas"": [],
+  ""Quantidade de Drogas"": ""Não especificado"",
+  ""Apreensão de Armas"": ""Não especificado"",
+  ""Armas Apreendidas"": [],
+  ""Primeiro Ator"": ""Milicianos"",
+  ""Segundo Ator"": ""Não especificado"",
+  ""Relação Entre Atores"": ""Rivalidade""
 }
 ```",
-662528e049c450d713adb9f8,"<think>
-Primeiro, identifico as informações relevantes da noticia. Em seguida, organizo cada informações em suas seções específicas como Organização Criminosa, Pais, Estado, etc., usando os valores fornecidos. Se não há informações, substituo com o valor padrão ('''). No caso de informações incompletas ou indeterminadas, usei uma lista vazia. Em todas as seções, uso os termos da estrutura do JSON para garantir a formatação correta.
-</think>
-
-```json
+662528e049c450d713adb9f8,"```json
 {
-    ""Organização Criminosa"": ""Delegacia de Combate ao Crime Organizado"",
-    ""Pais"": ""Brasil"",
-    "" Estado"": ""Rio de Janeiro"",
-    ""Município"": ""São João delves"",
-    ""Data"": ""14/02/2008"",
-    ""Hive Conflito"": ""Sim"",
-    ""Apreensão de Drogas"": [""Cláudio Ferraz, Inspector""],
-    ""Drogas Apreendidas"": [""Documentos de investigação sobre irregularidades na Draco""],
-    ""Quantidade de Drogas"": 1,
-    ""Apreensão de Armas"": ""Nenhuma"",
-    ""Armas Apreendidas"": [],
-    ""Primeiro Ator"": ""Cláudio Ferraz"",
-    ""Segundo Ator"": "" Gilson Emiliano Soares"",
-    ""Relação entre Atores"": ""Rivalidade, competição, Cooperação, Integração, Confronto""
+  ""Organização Criminosa"": ""Não especificado"",
+  ""Pais"": ""Não especificado"",
+  ""Estado"": ""Não especificado"",
+  ""Municipio"": ""Rio das Ostras"",
+  ""Data"": ""14-03-2024"",
+  ""Houve Conflito"": ""Não especificado"",
+  ""Apreensão de Drogas"": ""Sim"",
+  ""Drogas Apreendidas"": [
+    ""Não especificado""
+  ],
+  ""Quantidade de Drogas"": ""Não especificado"",
+  ""Apreensão de Armas"": ""Sim"",
+  ""Armas Apreendidas"": [
+    ""Pistolas"",
+    ""Revólveres"",
+    ""Escopetas""
+  ],
+  ""Primeiro Ator"": ""Não especificado"",
+  ""Segundo Ator"": ""Não especificado"",
+  ""Relação Entre Atores"": ""Rivalidade""
 }
 ```",

@@ -1,12 +1,11 @@
-# main_simplificado.py
-
 import os
 import pandas as pd
 from tqdm import tqdm
-import json # Usaremos para tentar carregar listas como 'Drogas Apreendidas'
+import json
+import re # NOVO: Importa a biblioteca de expressões regulares
 
 from data.database import get_all_articles, close_ssh_tunnel
-from prompt_simplificado import prompt_template_simplificado
+from prompt import prompt_template_simplificado
 
 # --- Configuração do Modelo de Linguagem (LLM) ---
 from langchain_community.chat_models import ChatOllama
@@ -14,7 +13,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
 llm = ChatOllama(
-    model="brunoconterato/Gemma-3-Gaia-PT-BR-4b-it:f16",
+    model="phi3:latest",
     base_url="http://127.0.0.1:11434",
     temperature=0.0
 )
@@ -38,13 +37,6 @@ def extract_and_process_features(article_ids: list, sentences: list):
         return
 
     extracted_data_list = []
-    # Cabeçalhos definidos na ordem exata do prompt
-    headers = [
-        "Organizacao Criminosa", "Pais", "Estado", "Municipio", "Data", "Houve Conflito",
-        "Apreensao de Drogas", "Drogas Apreendidas", "Quantidade de Drogas",
-        "Apreensao de Armas", "Armas Apreendidas", "Primeiro Ator", "Segundo Ator",
-        "Relacao Entre Atores"
-    ]
     
     print(f"Iniciando a extração para {len(sentences)} artigos.")
     
@@ -56,23 +48,32 @@ def extract_and_process_features(article_ids: list, sentences: list):
             continue
             
         try:
-            # O LLM agora retorna uma string separada por ';'
             response_str = chain.run({'input_noticia': article_text})
             
-            # Divide a string nos valores
-            values = response_str.strip().split(';')
+            # --- LÓGICA DE LIMPEZA APRIMORADA ---
+            # Usa expressões regulares para encontrar o bloco JSON na resposta,
+            # que pode conter texto extra antes ou depois.
+            match = re.search(r'\{.*\}', response_str, re.DOTALL)
             
-            # Cria um dicionário combinando cabeçalhos e valores
-            if len(values) == len(headers):
-                processed_data = dict(zip(headers, values))
-                processed_data['_id'] = article_id  # Adiciona o ID
-                extracted_data_list.append(processed_data)
+            if match:
+                clean_json_str = match.group(0)
+                # Analisa a string JSON extraída
+                data = json.loads(clean_json_str)
+                
+                # Adiciona o ID do artigo
+                data['_id'] = article_id
+                
+                extracted_data_list.append(data)
             else:
-                print(f"\nAVISO: Erro de formatação na resposta para o artigo {article_id}. Número de campos não corresponde ao esperado.")
-                print(f"   - Resposta recebida: {response_str}")
-                # Adiciona uma entrada de erro para não perder a referência
-                extracted_data_list.append({'_id': article_id, 'erro': 'formato_invalido', 'resposta_bruta': response_str})
+                # Se nenhum JSON for encontrado na resposta
+                print(f"\nAVISO: Nenhum JSON válido encontrado na resposta para o artigo {article_id}.")
+                extracted_data_list.append({'_id': article_id, 'erro': 'no_json_found', 'resposta_bruta': response_str})
 
+        except json.JSONDecodeError as e:
+            # Este erro agora ocorrerá se o bloco extraído ainda for um JSON inválido
+            print(f"\nAVISO: Erro de decodificação JSON para o artigo {article_id}.")
+            print(f"   - Bloco JSON extraído: {clean_json_str}")
+            extracted_data_list.append({'_id': article_id, 'erro': 'json_decode_error', 'resposta_bruta': response_str})
         except Exception as e:
             print(f"\nErro ao processar artigo {article_id}: {e}")
             extracted_data_list.append({
@@ -91,7 +92,7 @@ def extract_and_process_features(article_ids: list, sentences: list):
             cols = ['_id'] + [col for col in df_final.columns if col != '_id']
             df_final = df_final[cols]
             
-        output_filename = 'caracteristicas_extraidas_processado.csv'
+        output_filename = 'phi3:latest'
         df_final.to_csv(output_filename, index=False, encoding='utf-8-sig')
         print(f"\nResultados processados e salvos em '{output_filename}'")
     
@@ -121,11 +122,8 @@ if __name__ == "__main__":
             
             print("\nExtraindo textos dos artigos para a próxima fase...")
             
-            # --- PONTO IMPORTANTE ---
-            # O código abaixo seleciona apenas as 5 primeiras notícias para o teste.
-            # O .head(5) faz a limitação.
-            sentences = df_relevant_articles['article'].head(5).tolist()
-            article_ids = df_relevant_articles['_id'].head(5).tolist()
+            sentences = df_relevant_articles['article'].head(10).tolist() # Aumentei para 10 para um teste melhor
+            article_ids = df_relevant_articles['_id'].head(10).tolist()
             print(f"Total de {len(sentences)} textos prontos para processamento (limite de teste).")
 
             extract_and_process_features(article_ids, sentences)

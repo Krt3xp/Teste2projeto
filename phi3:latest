@@ -1,0 +1,51 @@
+﻿_id,Organizacao Criminosa,Pais,Estado,Municipio,Data,Drogas Apreendidas,Armas Apreendidas,erro,resposta_bruta
+6625282d49c450d713adb901,não informado,Brasil,Minas Gerais,Contagem,17-04-2023,['não informado'],['não informado'],,
+6625283649c450d713adb90d,,,,,,,,json_decode_error,"```json
+{
+  ""Organizacao Criminosa"": ""não informado"",
+  ""Pais"": ""Brasil"",
+  ""Estado"": ""não informado"",
+01-23,
+  ""Municipio"": ""não informado"",
+  ""Drogas Apreendidas"": [""não informado""],
+  ""Armas Apreendidas"": [""não informado""]
+}
+```"
+6625284949c450d713adb92f,não informado,Brasil,São Paulo,Guaianases,11-03-2023,"['cocaína', 'maconha']",['revólver calibre 38'],,
+6625285b49c450d713adb954,,,,,,,,json_decode_error,"```json
+{
+  ""Organizacao Criminosa"": ""não informado"",
+  ""Pais"": ""Brasil"",
+  ""Estado"": ""Mato Grosso do Sul"",
+  ""Municipio"": ""Campo Grande"",
+05-04-2023,
+  ""Drogas Apreendidas"": [],
+  ""Armas Apreendidas"": []
+}
+```"
+662528e049c450d713adb9f8,não informado,Brasil,Rio de Janeiro,Rios das Ostras,14-02-2023,['não informado'],"['pistolas', 'revólveres', 'escopetas']",,
+662528e349c450d713adb9fb,não informado,Brasil,Maranhão,Bacabal,DD-MM-AAAA,['não informado'],['não informado'],,
+662528f749c450d713adba15,,,,,,,,json_decode_error,"```json
+{
+  ""Organizacao Criminosa"": ""não informado"",
+  ""Pais"": ""Brasil"",
+  ""Estado"": ""Rio Grande do Sul"",
+01-23,
+  ""Municipio"": ""Rios das Ostras"",
+  ""Drogas Apreendidas"": [""não informado""],
+  ""Armas Apreendidas"": [""seis armas sem registro de apreensão""]
+}
+```"
+6625290449c450d713adba32,,,,,,,,json_decode_error,"```json
+{
+  ""Organizacao Criminosa"": ""não informado"",
+  ""Pais"": ""Brasil"",
+  ""Estado"": ""São Paulo"",
+05-12-2023,
+  ""Municipio"": ""Carapicuíba"",
+  ""Drogas Apreendidas"": [""maconha""],
+  ""Armas Apreendidas"": []
+}
+```"
+6625290c49c450d713adba44,"['PCC', 'Comando Vermelho (CV)', 'Terceiro Comando Puro (TCP)']",Brasil,Rio Grande do Sul,"['Jaguarão', 'Pelotas']",08-03-2023,['crack'],[],,
+6625290f49c450d713adba4c,não informado,Brasil,Rio de Janeiro,N/A,DD-MM-AAAA not provided in the text,,,,
