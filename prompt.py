@@ -15,11 +15,10 @@ Sua tarefa é gerar um objeto JSON contendo as informações extraídas seguindo
 }}
 ```
 
-## INSTRUÇÕES CRÍTICAS##
+**INSTRUÇÕES CRÍTICAS**
 - Responda APENAS com o JSON válido (sem comentários, explicações ou texto adicional).
 - Se um campo não for mencionado no texto, use "não informado", ao invés de tentar criar uma resposta.
 - Seja sucinto, sem colocar qualquer outra informação não solicitada.
-- Considere como lista de Facções Brasileiras: PCC (Primeiro Comando da Capital), Comando Vermelho (CV), Terceiro Comando Puro (TCP), Amigos dos Amigos (ADA) Família do Norte (FDN)
 
 **Texto da Notícia para Análise:**
 ---

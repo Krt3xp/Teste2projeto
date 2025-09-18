@@ -1,4 +1,4 @@
-﻿_id,Organização Criminosa,Pais,Estado,Municipio,Data,Drogas Apreendidas,Armas Apreendidas
+_id,Organização Criminosa,Pais,Estado,Municipio,Data,Drogas Apreendidas,Armas Apreendidas
 6625282d49c450d713adb901,Primeiro Comando da Capital,Brasil,MG,Contagem,17-03-2023,['Drogas'],['Cartas de Habitação']
 6625283649c450d713adb90d,PN,Brasil,Distrito Federal,Brasília,16-10-2023,['tráfico de influência'],['Movimento de tráfico de influência']
 6625284949c450d713adb92f,Primeiro Comando da Capital,Brasil,São Paulo,Guaianases,11-01-2023,"['entador', 'arma']",['revolver']

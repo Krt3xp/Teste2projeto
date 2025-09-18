@@ -122,8 +122,8 @@ if __name__ == "__main__":
             
             print("\nExtraindo textos dos artigos para a próxima fase...")
             
-            sentences = df_relevant_articles['article'].head(10).tolist() # Aumentei para 10 para um teste melhor
-            article_ids = df_relevant_articles['_id'].head(10).tolist()
+            sentences = df_relevant_articles['article'].tolist() # Aumentei para 10 para um teste melhor
+            article_ids = df_relevant_articles['_id'].tolist()
             print(f"Total de {len(sentences)} textos prontos para processamento (limite de teste).")
 
             extract_and_process_features(article_ids, sentences)
